@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – Gemani Supplies Kenya</title>
+  <meta name="description" content="Kenya's leading CCTV, Access Control, Solar, Power Backup and Network Equipment supplier and installer."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__item">
+      <span>📞</span>
+      <a href="tel:+254710388577">0710 388 577</a>
+      <span class="topbar__sep">|</span>
+      <a href="tel:+254721620637">0721 620 637</a>
+    </div>
+    <div class="topbar__item">
+      <span>✉️</span>
+      <a href="mailto:info@gemani.co.ke">info@gemani.co.ke</a>
+    </div>
+    <div class="topbar__item">
+      <span>🕐 Mon–Sat: 8AM – 6PM</span>
+    </div>
+  </div>
+</div>
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Gemani Supplies" class="logo__img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <div class="logo__text" style="display:none">GEMANI<span>SUPPLIES</span></div>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="main-nav__link">Home</a>
+      <a href="shop.html" class="main-nav__link is-active">Shop</a>
+      <a href="services.html" class="main-nav__link">Services</a>
+      <a href="about.html" class="main-nav__link">About Us</a>
+      <a href="contact.html" class="main-nav__link">Contact Us</a>
+    </nav>
+    <div class="header__actions">
+      <span class="header__phone">📞 <span>(+254) 0710 388 577</span></span>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- DEPARTMENT NAV -->
+<div class="dept-nav">
+  <ul class="container dept-nav__list"><li><a href="shop.html#cctv" class="dept-nav__link">CCTV Cameras</a></li><li><a href="shop.html#access" class="dept-nav__link">Access Control</a></li><li><a href="shop.html#solar" class="dept-nav__link">Solar</a></li><li><a href="shop.html#power" class="dept-nav__link">Power Backup</a></li><li><a href="shop.html#alarms" class="dept-nav__link">Alarm Systems</a></li><li><a href="shop.html#network" class="dept-nav__link">Network Equipment</a></li><li><a href="shop.html#gates" class="dept-nav__link">Automatic Gates</a></li><li><a href="shop.html#fence" class="dept-nav__link">Electric Fence</a></li><li><a href="shop.html#time" class="dept-nav__link">Time &amp; Attendance</a></li><li><a href="shop.html#telephony" class="dept-nav__link">Telephony</a></li><li><a href="shop.html#computing" class="dept-nav__link">Computing</a></li></ul>
+</div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="images/page-banner.jpg" alt="Gemani Supplies"
+         onerror="this.style.display='none'"/>
+  </div>
+  <div class="page-hero__content container">
+    <h1 class="page-hero__title">Our <span>Products</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> › Shop</div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container shop-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar__block">
+        <h4 class="sidebar__title">Search Products</h4>
+        <div class="sidebar__search">
+          <input type="text" class="sidebar__search-input" id="shopSearchInput" placeholder="Search products…"/>
+          <button class="sidebar__search-btn" id="shopSearchBtn">🔍</button>
+        </div>
+      </div>
+      <div class="sidebar__block">
+        <h4 class="sidebar__title">Categories</h4>
+        <ul>
+          <li><a href="#cctv" class="sidebar__cat-link">📷 CCTV Cameras</a></li>
+          <li><a href="#access" class="sidebar__cat-link">🚪 Access Control</a></li>
+          <li><a href="#solar" class="sidebar__cat-link">☀️ Solar Systems</a></li>
+          <li><a href="#power" class="sidebar__cat-link">🔋 Power Backup</a></li>
+          <li><a href="#alarms" class="sidebar__cat-link">🚨 Alarm Systems</a></li>
+          <li><a href="#network" class="sidebar__cat-link">🌐 Network Equipment</a></li>
+          <li><a href="#gates" class="sidebar__cat-link">⛩️ Automatic Gates</a></li>
+          <li><a href="#fence" class="sidebar__cat-link">⚡ Electric Fence</a></li>
+          <li><a href="#time" class="sidebar__cat-link">⏱️ Time &amp; Attendance</a></li>
+          <li><a href="#telephony" class="sidebar__cat-link">📞 Telephony</a></li>
+          <li><a href="#computing" class="sidebar__cat-link">💻 Computing</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__block">
+        <h4 class="sidebar__title">Need Help?</h4>
+        <p class="sidebar__help-text">Can't find what you need? Our team is happy to help you choose the right product.</p>
+        <a href="https://wa.me/254721620637" target="_blank" class="btn btn--green btn--full" style="margin-bottom:8px">💬 WhatsApp Us</a>
+        <a href="contact.html" class="btn btn--outline-red btn--full">Get a Quote</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <div class="shop-section" id="cctv">
+        <h2 class="shop-section__title">📷 CCTV Cameras</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        <span class="prod-card__badge">SALE</span>
+        <div class="prod-card__img">
+          <img src="images/prod-dome.jpg" alt="Hikvision 2MP Dome" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📷</span>
+            <span class="ph-txt">2MP Dome</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">CCTV Cameras</span>
+          <p class="prod-card__name">Hikvision 2MP Fixed Dome Camera</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 3,500</span>
+            <span class="prod-card__price-old">KSh 4,000</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        <span class="prod-card__badge">SALE</span>
+        <div class="prod-card__img">
+          <img src="images/prod-ipcam.jpg" alt="Hikvision 4MP IP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📹</span>
+            <span class="ph-txt">4MP IP Cam</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">CCTV Cameras</span>
+          <p class="prod-card__name">Hikvision 4MP Dome IP Camera</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 6,800</span>
+            <span class="prod-card__price-old">KSh 7,000</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-bullet.jpg" alt="1080p Bullet Camera" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📹</span>
+            <span class="ph-txt">Bullet Camera</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">CCTV Cameras</span>
+          <p class="prod-card__name">Hikvision 1080p Bullet Camera</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 1,800</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-ptz.jpg" alt="PTZ Camera" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔭</span>
+            <span class="ph-txt">PTZ Camera</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">CCTV Cameras</span>
+          <p class="prod-card__name">Hikvision PTZ Network Camera</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 25,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-nanny.jpg" alt="V380 Pro Nanny Cam" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📷</span>
+            <span class="ph-txt">Nanny Camera</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Nanny Cameras</span>
+          <p class="prod-card__name">V380 Pro Smart Wi-Fi Camera</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 6,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-nvr.jpg" alt="Hikvision 8ch NVR" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">💾</span>
+            <span class="ph-txt">8ch NVR</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">NVR</span>
+          <p class="prod-card__name">Hikvision 8-Channel NVR DS-7608NI</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 18,000</span>
+            <span class="prod-card__price-old">KSh 20,000</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="access">
+        <h2 class="shop-section__title">🚪 Access Control</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        <span class="prod-card__badge">SALE</span>
+        <div class="prod-card__img">
+          <img src="images/prod-doorlock.jpg" alt="Smart Digital Door Lock" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔒</span>
+            <span class="ph-txt">Door Lock</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Access Control</span>
+          <p class="prod-card__name">Smart Digital Door Locks</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 15,000</span>
+            <span class="prod-card__price-old">KSh 16,999</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-videodoor.jpg" alt="Video Door Phone" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🚪</span>
+            <span class="ph-txt">Video Door</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Access Control</span>
+          <p class="prod-card__name">Hikvision Video Door Phone</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 12,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-biometric.jpg" alt="ZKTeco Biometric Terminal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">👆</span>
+            <span class="ph-txt">Biometric</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">ZKTeco</span>
+          <p class="prod-card__name">ZKTeco Biometric Access Terminal</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 8,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-rfid.jpg" alt="RFID Card Reader" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">💳</span>
+            <span class="ph-txt">RFID Reader</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Access Control</span>
+          <p class="prod-card__name">HID RFID Card Reader</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 4,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="solar">
+        <h2 class="shop-section__title">☀️ Solar Systems</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        <span class="prod-card__badge">SALE</span>
+        <div class="prod-card__img">
+          <img src="images/prod-inverter.jpg" alt="5KVA MUST Inverter" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔋</span>
+            <span class="ph-txt">MUST Inverter</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Solar / Inverters</span>
+          <p class="prod-card__name">5KVA MUST Hybrid Inverter PV18-5048</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 80,000</span>
+            <span class="prod-card__price-old">KSh 85,000</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-panel.jpg" alt="300W Solar Panel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">☀️</span>
+            <span class="ph-txt">Solar Panel</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Solar Panels</span>
+          <p class="prod-card__name">300W Mono Solar Panel</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 12,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-battery.jpg" alt="200Ah Solar Battery" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔋</span>
+            <span class="ph-txt">Solar Battery</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Solar Batteries</span>
+          <p class="prod-card__name">200Ah Deep Cycle Solar Battery</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 28,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-solarkit.jpg" alt="3KVA Solar Kit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⚡</span>
+            <span class="ph-txt">Solar Kit</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Solar Kits</span>
+          <p class="prod-card__name">Complete 3KVA Solar Kit (Panel+Battery+Inverter)</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 120,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="power">
+        <h2 class="shop-section__title">🔋 Power Backup</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-ups.jpg" alt="1KVA UPS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔌</span>
+            <span class="ph-txt">1KVA UPS</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">UPS</span>
+          <p class="prod-card__name">1KVA Online UPS</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 12,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-mppt.jpg" alt="MPPT Charge Controller" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⚡</span>
+            <span class="ph-txt">MPPT</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Power Backup</span>
+          <p class="prod-card__name">60A MPPT Solar Charge Controller</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 6,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="alarms">
+        <h2 class="shop-section__title">🚨 Alarm Systems</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-alarm.jpg" alt="Risco Alarm Panel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🚨</span>
+            <span class="ph-txt">Alarm Panel</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Alarm Systems</span>
+          <p class="prod-card__name">Risco LightSYS2 Alarm Panel</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 15,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-smoke.jpg" alt="Smoke Detector" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔥</span>
+            <span class="ph-txt">Smoke Detector</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Smoke Detectors</span>
+          <p class="prod-card__name">Wireless Smoke Detector</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 2,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-pir.jpg" alt="PIR Motion Sensor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">👁️</span>
+            <span class="ph-txt">Motion Sensor</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Alarm Systems</span>
+          <p class="prod-card__name">PIR Motion Detector Sensor</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 1,800</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="network">
+        <h2 class="shop-section__title">🌐 Network Equipment</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-wifi.jpg" alt="TP-Link Deco M5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🌐</span>
+            <span class="ph-txt">Mesh Wi-Fi</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Network</span>
+          <p class="prod-card__name">TP-Link Deco M5 Mesh Wi-Fi (3-Pack)</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 30,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-switch.jpg" alt="TP-Link 24-Port Switch" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🔗</span>
+            <span class="ph-txt">24-Port Switch</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Switches</span>
+          <p class="prod-card__name">TP-Link 24-Port Gigabit Switch</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 8,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        <span class="prod-card__badge">SALE</span>
+        <div class="prod-card__img">
+          <img src="images/prod-patchpanel.jpg" alt="CAT6 Patch Panel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🌐</span>
+            <span class="ph-txt">Patch Panel</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Cabling</span>
+          <p class="prod-card__name">CAT6 24-Port Patch Panel</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 2,500</span>
+            <span class="prod-card__price-old">KSh 3,000</span>
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-uap.jpg" alt="Ubiquiti UniFi AP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📡</span>
+            <span class="ph-txt">UniFi AP</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Ubiquiti</span>
+          <p class="prod-card__name">Ubiquiti UniFi Access Point</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 14,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="gates">
+        <h2 class="shop-section__title">⛩️ Automatic Gates</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-slidemotor.jpg" alt="Sliding Gate Motor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⛩️</span>
+            <span class="ph-txt">Slide Motor</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Automatic Gates</span>
+          <p class="prod-card__name">Heavy Duty Sliding Gate Motor</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 35,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-swingmotor.jpg" alt="Swing Gate Motor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🚪</span>
+            <span class="ph-txt">Swing Motor</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Automatic Gates</span>
+          <p class="prod-card__name">Automatic Swing Gate Motor (Pair)</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 28,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="fence">
+        <h2 class="shop-section__title">⚡ Electric Fence</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-energizer.jpg" alt="Electric Fence Energizer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⚡</span>
+            <span class="ph-txt">Energizer</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Electric Fence</span>
+          <p class="prod-card__name">10J Electric Fence Energizer</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 22,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="time">
+        <h2 class="shop-section__title">⏱️ Time & Attendance</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-zkteco.jpg" alt="ZKTeco K40 Terminal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⏱️</span>
+            <span class="ph-txt">ZKTeco K40</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Time &amp; Attendance</span>
+          <p class="prod-card__name">ZKTeco K40 Biometric Time Terminal</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 9,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="telephony">
+        <h2 class="shop-section__title">📞 Telephony / PBX</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-pbx.jpg" alt="Yeastar S20 PBX" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📞</span>
+            <span class="ph-txt">Yeastar PBX</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Telephony</span>
+          <p class="prod-card__name">Yeastar S20 VoIP PBX System</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 35,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="shop-section" id="computing">
+        <h2 class="shop-section__title">💻 Computing</h2>
+        <div class="prod-grid"><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-keyboard.jpg" alt="Logitech K380 Keyboard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">⌨️</span>
+            <span class="ph-txt">Keyboard</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Keyboards</span>
+          <p class="prod-card__name">Logitech K380 Bluetooth Keyboard</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 4,500</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-mouse.jpg" alt="Logitech M280 Mouse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">🖱️</span>
+            <span class="ph-txt">Mouse</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Mice</span>
+          <p class="prod-card__name">Logitech M280 Wireless Mouse</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 2,200</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div><div class="prod-card reveal">
+        
+        <div class="prod-card__img">
+          <img src="images/prod-webcam.jpg" alt="Logitech C920 Webcam" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-card__placeholder" style="display:none">
+            <span class="ph-ico">📷</span>
+            <span class="ph-txt">Webcam</span>
+          </div>
+        </div>
+        <div class="prod-card__body">
+          <span class="prod-card__cat">Computing</span>
+          <p class="prod-card__name">Logitech C920 HD Pro Webcam</p>
+          <div class="prod-card__price">
+            <span class="prod-card__price-new">KSh 12,000</span>
+            
+          </div>
+          <a href="#" class="prod-card__btn">View Product</a>
+        </div>
+      </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container cta-band__inner">
+    <div><h3 class="cta-band__title">Can't Find What You Need?</h3><p class="cta-band__sub">Contact us — we can source almost any security or technology product.</p></div>
+    <div class="cta-band__btns">
+      <a href="contact.html" class="btn btn--white">Contact Us</a>
+      <a href="https://wa.me/254721620637" target="_blank" class="btn btn--green">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Gemani Supplies" class="footer-brand__logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <div class="footer-brand__text">GEMANI SUPPLIES</div>
+      <p class="footer-brand__desc">Kenya's leading supplier and installer of CCTV, access control, solar energy and technology infrastructure. Serving all 47 counties.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/254721620637" target="_blank" class="footer-social__link" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+        <a href="mailto:info@gemani.co.ke" class="footer-social__link" title="Email">✉</a>
+        <a href="tel:+254710388577" class="footer-social__link" title="Call">📞</a>
+      </div>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Products</h5>
+      <a href="shop.html#cctv" class="footer-col__link">CCTV Cameras</a>
+      <a href="shop.html#access" class="footer-col__link">Access Control</a>
+      <a href="shop.html#solar" class="footer-col__link">Solar Systems</a>
+      <a href="shop.html#power" class="footer-col__link">Power Backup</a>
+      <a href="shop.html#alarms" class="footer-col__link">Alarm Systems</a>
+      <a href="shop.html#network" class="footer-col__link">Network Equipment</a>
+      <a href="shop.html#gates" class="footer-col__link">Automatic Gates</a>
+      <a href="shop.html#fence" class="footer-col__link">Electric Fence</a>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Quick Links</h5>
+      <a href="index.html" class="footer-col__link">Home</a>
+      <a href="shop.html" class="footer-col__link">Shop</a>
+      <a href="services.html" class="footer-col__link">Our Services</a>
+      <a href="about.html" class="footer-col__link">About Us</a>
+      <a href="contact.html" class="footer-col__link">Contact Us</a>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Contact Us</h5>
+      <p class="footer-col__info">📞 <a href="tel:+254710388577">0710 388 577</a></p>
+      <p class="footer-col__info">📞 <a href="tel:+254721620637">0721 620 637</a></p>
+      <p class="footer-col__info">✉️ <a href="mailto:info@gemani.co.ke">info@gemani.co.ke</a></p>
+      <p class="footer-col__info">🕐 Mon–Sat: 8AM – 6PM</p>
+      <p class="footer-col__info">📍 Nairobi, Kenya</p>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <p>© 2025 Gemani Supplies. All Rights Reserved.</p>
+      <p>Kenya's #1 Security &amp; Technology Supplier</p>
+    </div>
+  </div>
+</footer>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254721620637?text=Hello%20Gemani%20Supplies!" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- CHATBOT -->
+<div class="chatbot">
+  <button class="chatbot__toggle" id="chatToggle" aria-label="Open chat assistant">
+    <svg class="chatbot__icon-chat" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="26" height="26"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <svg class="chatbot__icon-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="chatbot__badge is-hidden" id="chatBadge">1</span>
+  </button>
+
+  <div class="chatbot__panel" id="chatPanel">
+    <div class="chatbot__head">
+      <div class="chatbot__avatar">🤖</div>
+      <div class="chatbot__info">
+        <strong>Gemani Assistant</strong>
+        <span>● Online now</span>
+      </div>
+      <button class="chatbot__close-btn" id="chatCloseBtn">✕</button>
+    </div>
+
+    <div class="chatbot__messages" id="chatMessages">
+      <div class="chat-msg chat-msg--bot">
+        <div class="chat-msg__bubble">
+          👋 Welcome to <strong>Gemani Supplies!</strong><br/>
+          I can help with product info, pricing and quotes. What do you need?
+        </div>
+      </div>
+      <div class="chat-quick">
+        <button class="chat-quick__btn" data-q="Tell me about CCTV cameras">📷 CCTV Cameras</button>
+        <button class="chat-quick__btn" data-q="I need a solar system quote">☀️ Solar</button>
+        <button class="chat-quick__btn" data-q="Access control systems">🔒 Access Control</button>
+        <button class="chat-quick__btn" data-q="I need a quote">💰 Get a Quote</button>
+        <button class="chat-quick__btn" data-q="What are your working hours?">🕐 Hours</button>
+        <button class="chat-quick__btn" data-q="How do I place an order?">🛒 Order</button>
+      </div>
+    </div>
+
+    <div class="chatbot__input-row">
+      <input type="text" class="chatbot__text-input" id="chatTextInput" placeholder="Type a message…" autocomplete="off"/>
+      <button class="chatbot__send-btn" id="chatSendBtn" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+    <div class="chatbot__footer-note">
+      Powered by Gemani AI · <a href="https://wa.me/254721620637" target="_blank">WhatsApp us</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
