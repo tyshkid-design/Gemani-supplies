@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details – Gemani Supplies</title>
+  <meta name="description" content="Kenya's leading CCTV, Access Control, Solar, Power Backup and Network Equipment supplier and installer."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__item">
+      <span>📞</span>
+      <a href="tel:+254710388577">0710 388 577</a>
+      <span class="topbar__sep">|</span>
+      <a href="tel:+254721620637">0721 620 637</a>
+    </div>
+    <div class="topbar__item">
+      <span>✉️</span>
+      <a href="mailto:info@gemani.co.ke">info@gemani.co.ke</a>
+    </div>
+    <div class="topbar__item">
+      <span>🕐 Mon–Sat: 8AM – 6PM</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="images/gem logo.png" alt="Gemani Supplies" class="logo__img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <div class="logo__text" style="display:none">GEMANI<span>SUPPLIES</span></div>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="main-nav__link">Home</a>
+      <a href="shop.html" class="main-nav__link">Shop</a>
+      <a href="services.html" class="main-nav__link">Services</a>
+      <a href="about.html" class="main-nav__link">About Us</a>
+      <a href="contact.html" class="main-nav__link">Contact Us</a>
+    </nav>
+
+    <div class="header__actions">
+      <span class="header__phone">📞 <span>(+254) 0710 388 577</span></span>
+
+      <!-- Simple cart indicator -->
+      <a href="#cart" class="btn btn--red" style="padding:10px 14px; margin-right:6px; font-size:0.82rem;" id="cartBtn" aria-label="View cart">
+        🛒 Cart <span id="cartCount" style="font-weight:900;">0</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="images/shop.jpg" alt="Gemani Supplies" onerror="this.style.display='none'"/>
+  </div>
+  <div class="page-hero__content container">
+    <h1 class="page-hero__title">Product <span>Details</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="shop.html">Shop</a> › <span id="breadcrumbProduct">Product</span></div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items:start;">
+
+    <!-- Product -->
+    <div>
+      <div class="sidebar__block" style="margin-bottom:16px;">
+        <h4 class="sidebar__title" style="margin-bottom:10px;">Selected Product</h4>
+
+        <div id="productDetails" style="display:none;">
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="flex:0 0 120px; border:1px solid #eeeeee; border-radius:6px; overflow:hidden; background:#fff;">
+              <img id="productImg" src="" alt="Product image" style="width:100%; height:120px; object-fit:contain; display:block;" onerror="this.style.display='none';"/>
+            </div>
+            <div style="flex:1;">
+              <div id="productCat" class="prod-card__cat" style="margin-bottom:6px;">Category</div>
+              <h2 class="section-heading" style="margin-bottom:10px;"> <span style="color:#dd3333;"> </span><span id="productName" style="color:#222;">Product Name</span></h2>
+              <div class="prod-card__price" style="margin-bottom:8px;">
+                <span class="prod-card__price-new" id="productPriceNew">KSh 0</span>
+                <span class="prod-card__price-old" id="productPriceOld" style="display:none;">KSh 0</span>
+              </div>
+              <p id="productDesc" style="font-size:0.92rem; color:#555; line-height:1.8; margin-top:8px;" ></p>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn--red" id="addToCartBtn" style="border:2px solid #dd3333;">➕ Add to Cart</button>
+            <a href="shop.html" class="btn btn--white" style="border:2px solid #ffffff;">← Back to Shop</a>
+          </div>
+
+          <div style="margin-top:14px; font-size:0.82rem; color:#888;">
+            Price and availability may vary. For quotes or bulk orders, contact us.
+          </div>
+        </div>
+
+        <div id="productNotFound" style="display:none;">
+          <p style="font-size:0.95rem; color:#555;">No product selected. Please go back to <a href="shop.html">Shop</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart -->
+    <div>
+      <div class="sidebar__block" id="cart">
+        <h4 class="sidebar__title" style="margin-bottom:10px;">Your Cart</h4>
+
+        <div id="cartEmpty" style="display:none;">
+          <p style="font-size:0.92rem; color:#555;">Your cart is empty.</p>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid #eeeeee;">
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:center;">
+            <strong style="color:#222;">Total:</strong>
+            <span id="cartTotal" style="font-weight:900; color:#dd3333;">KSh 0</span>
+          </div>
+          <div style="margin-top:10px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn--green" id="checkoutBtn" style="border:2px solid #25d366;">✅ Checkout (WhatsApp)</button>
+            <button class="btn btn--outline-red" id="clearCartBtn">Clear</button>
+          </div>
+          <div style="margin-top:10px; font-size:0.78rem; color:#888; line-height:1.7;">
+            Checkout opens WhatsApp with your cart summary.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Gemani Supplies" class="footer-brand__logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <div class="footer-brand__text">GEMANI SUPPLIES</div>
+      <p class="footer-brand__desc">Kenya's leading supplier and installer of CCTV, access control, solar energy and technology infrastructure. Serving all 47 counties.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/254721620637" target="_blank" class="footer-social__link" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+        <a href="mailto:info@gemani.co.ke" class="footer-social__link" title="Email">✉</a>
+        <a href="tel:+254710388577" class="footer-social__link" title="Call">📞</a>
+      </div>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Products</h5>
+      <a href="shop.html#cctv" class="footer-col__link">CCTV Cameras</a>
+      <a href="shop.html#access" class="footer-col__link">Access Control</a>
+      <a href="shop.html#solar" class="footer-col__link">Solar Systems</a>
+      <a href="shop.html#power" class="footer-col__link">Power Backup</a>
+      <a href="shop.html#alarms" class="footer-col__link">Alarm Systems</a>
+      <a href="shop.html#network" class="footer-col__link">Network Equipment</a>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Quick Links</h5>
+      <a href="index.html" class="footer-col__link">Home</a>
+      <a href="shop.html" class="footer-col__link">Shop</a>
+      <a href="services.html" class="footer-col__link">Our Services</a>
+      <a href="about.html" class="footer-col__link">About Us</a>
+      <a href="contact.html" class="footer-col__link">Contact Us</a>
+    </div>
+
+    <div>
+      <h5 class="footer-col__title">Contact Us</h5>
+      <p class="footer-col__info">📞 <a href="tel:+254710388577">0710 388 577</a></p>
+      <p class="footer-col__info">📞 <a href="tel:+254721620637">0721 620 637</a></p>
+      <p class="footer-col__info">✉️ <a href="mailto:info@gemani.co.ke">info@gemani.co.ke</a></p>
+      <p class="footer-col__info">🕐 Mon–Sat: 8AM – 6PM</p>
+      <p class="footer-col__info">📍 Nairobi, Kenya</p>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <p>© 2025 Gemani Supplies. All Rights Reserved.</p>
+      <p>Kenya's #1 Security &amp; Technology Supplier</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254721620637?text=Hello%20Gemani%20Supplies!" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Small inline scripts for this page -->
+<script>
+(function(){
+  'use strict';
+
+  // Product catalog (meaningful IDs). Images reference your existing shop images.
+  var PRODUCTS = {
+    // CCTV Cameras
+    "cctv-hik-2mp-dome": {
+      id:"cctv-hik-2mp-dome",
+      category:"CCTV Cameras",
+      name:"Hikvision 2MP Fixed Dome Camera",
+      priceNew:3500,
+      priceOld:4000,
+      image:"images/dome.png",
+      description:"Reliable 2MP dome camera for clear day/night surveillance. Ideal for homes, shops and small offices."
+    },
+    "cctv-hik-4mp-dome": {
+      id:"cctv-hik-4mp-dome",
+      category:"CCTV Cameras",
+      name:"Hikvision 4MP Dome IP Camera",
+      priceNew:6800,
+      priceOld:7000,
+      image:"images/4mp.jpg",
+      description:"4MP dome IP camera delivering sharper details for monitoring. Great for perimeter and indoor coverage."
+    },
+    "cctv-hik-1080p-bullet": {
+      id:"cctv-hik-1080p-bullet",
+      category:"CCTV Cameras",
+      name:"Hikvision 1080p Bullet Camera",
+      priceNew:1800,
+      image:"images/bullet.png",
+      description:"Compact bullet camera for focused surveillance. Suitable for entrances and corridors."
+    },
+    "cctv-hik-ptz": {
+      id:"cctv-hik-ptz",
+      category:"CCTV Cameras",
+      name:"Hikvision PTZ Network Camera",
+      priceNew:25000,
+      image:"images/ptz.jpg",
+      description:"PTZ camera allows pan/tilt/zoom so you can track activity and cover larger areas with one camera."
+    },
+    "cctv-v380-nanny-wifi": {
+      id:"cctv-v380-nanny-wifi",
+      category:"Nanny Cameras",
+      name:"V380 Pro Smart Wi-Fi Camera",
+      priceNew:6000,
+      image:"images/wifi.png",
+      description:"Wi‑Fi enabled smart camera for home monitoring. View live video on your phone anytime."
+    },
+    "cctv-hik-8ch-nvr-ds-7608ni": {
+      id:"cctv-hik-8ch-nvr-ds-7608ni",
+      category:"NVR",
+      name:"Hikvision 8-Channel NVR DS-7608NI",
+      priceNew:18000,
+      priceOld:20000,
+      image:"images/nvr.png",
+      description:"8‑channel NVR for reliable recording and playback. A solid foundation for multi‑camera CCTV systems."
+    },
+
+    // Access Control
+    "access-smart-digital-door-lock": {
+      id:"access-smart-digital-door-lock",
+      category:"Access Control",
+      name:"Smart Digital Door Locks",
+      priceNew:15000,
+      priceOld:16999,
+      image:"images/smart.png",
+      description:"Smart door lock for convenient access control—great for offices, apartments and residential doors."
+    },
+    "access-hik-video-door-phone": {
+      id:"access-hik-video-door-phone",
+      category:"Access Control",
+      name:"Hikvision Video Door Phone",
+      priceNew:12000,
+      image:"images/door phone.png",
+      description:"Video door phone lets visitors communicate at the entrance and supports safer access management."
+    },
+    "access-zkteco-biometric-terminal": {
+      id:"access-zkteco-biometric-terminal",
+      category:"ZKTeco",
+      name:"ZKTeco Biometric Access Terminal",
+      priceNew:8500,
+      image:"images/zk.png",
+      description:"Biometric terminal for user verification and access control. Suitable for small and mid-size setups."
+    },
+    "access-hid-rfid-card-reader": {
+      id:"access-hid-rfid-card-reader",
+      category:"Access Control",
+      name:"HID RFID Card Reader",
+      priceNew:4500,
+      image:"images/hid.png",
+      description:"RFID card reader for contactless access. Easy to integrate with access control systems."
+    },
+    "access-hik-magnetic-lock-280kg": {
+      id:"access-hik-magnetic-lock-280kg",
+      category:"Access Control",
+      name:"Hikvision Magnetic Lock 280kg",
+      priceNew:6000,
+      image:"images/mag.png",
+      description:"Strong magnetic lock for secure door holding. Designed for reliable daily use."
+    },
+    "access-4door-access-controller-ds-k2604t": {
+      id:"access-4door-access-controller-ds-k2604t",
+      category:"Access Control",
+      name:"4-Door Access Controller DS-K2604T",
+      priceNew:35000,
+      image:"images/hik.png",
+      description:"4‑door access controller for managing entry points, users and permissions."
+    },
+    "access-hik-door-closer-ds-k4dc103": {
+      id:"access-hik-door-closer-ds-k4dc103",
+      category:"Access Control",
+      name:"Hikvision Door Closer DS-K4DC103",
+      priceNew:3500,
+      image:"images/door.png",
+      description:"Automatic door closer for smooth and controlled door closing. Improves access reliability."
+    },
+
+    // Solar
+    "solar-5kva-must-hybrid-inverter": {
+      id:"solar-5kva-must-hybrid-inverter",
+      category:"Solar / Inverters",
+      name:"5KVA MUST Hybrid Inverter PV18-5048",
+      priceNew:80000,
+      priceOld:85000,
+      image:"images/si.png",
+      description:"Hybrid inverter for solar power with backup capability. Ideal for off‑grid and backup applications."
+    },
+    "solar-300w-mono-solar-panel": {
+      id:"solar-300w-mono-solar-panel",
+      category:"Solar Panels",
+      name:"300W Mono Solar Panel",
+      priceNew:12000,
+      image:"images/300w.png",
+      description:"High-efficiency mono solar panel for dependable energy generation."
+    },
+    "solar-200ah-deep-cycle-battery": {
+      id:"solar-200ah-deep-cycle-battery",
+      category:"Solar Batteries",
+      name:"200Ah Deep Cycle Solar Battery",
+      priceNew:28000,
+      image:"images/DC.png",
+      description:"Deep-cycle battery storage for solar systems—helps provide stable power during the night."
+    },
+    "solar-3kva-solar-kit": {
+      id:"solar-3kva-solar-kit",
+      category:"Solar Kits",
+      name:"Complete 3KVA Solar Kit (Panel+Battery+Inverter)",
+      priceNew:120000,
+      image:"images/kit.png",
+      description:"Complete solar kit package for quick installation—includes panel, battery and inverter."
+    },
+    "solar-3kw-24v-hybrid-inverter": {
+      id:"solar-3kw-24v-hybrid-inverter",
+      category:"Solar / Inverters",
+      name:"3KW Hybrid Inverter 24V",
+      priceNew:55000,
+      image:"images/24k.png",
+      description:"Compact 3KW 24V hybrid inverter for smaller solar installations and backup."
+    },
+    "solar-5p5kw-48v-hybrid-inverter": {
+      id:"solar-5p5kw-48v-hybrid-inverter",
+      category:"Solar / Inverters",
+      name:"5.5KW Hybrid Inverter 48V",
+      priceNew:70000,
+      image:"images/5.5k.png",
+      description:"5.5KW 48V hybrid inverter for efficient solar conversion and backup functionality."
+    },
+    "solar-8p6kw-48v-hybrid-inverter": {
+      id:"solar-8p6kw-48v-hybrid-inverter",
+      category:"Solar / Inverters",
+      name:"8.6KW Hybrid Inverter 48V",
+      priceNew:110000,
+      image:"images/8k.png",
+      description:"High-capacity 8.6KW hybrid inverter for bigger home or commercial solar systems."
+    },
+
+    // Power Backup
+    "power-ups-battery-backup": {
+      id:"power-ups-battery-backup",
+      category:"Battery and Back-up",
+      name:"Complete Battery Backup Solutions",
+      priceNew:null,
+      image:"images/ups.png",
+      description:"Full backup solution—get help selecting UPS/inverter and batteries for your load."
+    },
+    "power-svolt-2p7kwh-lithium-battery": {
+      id:"power-svolt-2p7kwh-lithium-battery",
+      category:"Battery and Back-up",
+      name:"SVOLT 2.7kWh Lithium Battery",
+      priceNew:82000,
+      image:"images/lithium.png",
+      description:"Durable lithium battery for reliable energy storage and backup."
+    },
+    "power-svolt-48v-106ah-5p09kwh-lithium-battery": {
+      id:"power-svolt-48v-106ah-5p09kwh-lithium-battery",
+      category:"Battery and Back-up",
+      name:"SVOLT 48V 106AH 5.09KWH Lithium Battery",
+      priceNew:120000,
+      image:"images/48v.png",
+      description:"48V lithium battery offering long lifespan and efficient backup power."
+    },
+
+    // Alarm Systems
+    "alarms-risco-lightsys2-panel": {
+      id:"alarms-risco-lightsys2-panel",
+      category:"Alarm Systems",
+      name:"Risco LightSYS2 Alarm Panel",
+      priceNew:15000,
+      image:"images/alarm.png",
+      description:"Alarm control panel for reliable intrusion detection and system management."
+    },
+    "alarms-wireless-smoke-detector": {
+      id:"alarms-wireless-smoke-detector",
+      category:"Smoke Detectors",
+      name:"Wireless Smoke Detector",
+      priceNew:2500,
+      image:"images/smoke.png",
+      description:"Wireless smoke detector for early warning and improved safety."
+    },
+    "alarms-pir-motion-detector": {
+      id:"alarms-pir-motion-detector",
+      category:"Alarm Systems",
+      name:"PIR Motion Detector Sensor",
+      priceNew:1800,
+      image:"images/det.png",
+      description:"PIR motion sensor for movement detection with quick response."
+    },
+
+    // Network Equipment
+    "network-tp-link-deco-m5-3-pack": {
+      id:"network-tp-link-deco-m5-3-pack",
+      category:"Network",
+      name:"TP-Link Deco M5 Mesh Wi-Fi (3-Pack)",
+      priceNew:30000,
+      image:"images/tl.png",
+      description:"Mesh Wi‑Fi system for whole‑house coverage and stable wireless performance."
+    },
+    "network-tp-link-24port-gigabit-switch": {
+      id:"network-tp-link-24port-gigabit-switch",
+      category:"Switches",
+      name:"TP-Link 24-Port Gigabit Switch",
+      priceNew:8000,
+      image:"images/tp.png",
+      description:"Gigabit switch for fast and reliable wired connectivity."
+    },
+    "network-cat6-24port-patch-panel": {
+      id:"network-cat6-24port-patch-panel",
+      category:"Cabling",
+      name:"CAT6 24-Port Patch Panel",
+      priceNew:2500,
+      priceOld:3000,
+      image:"images/24.png",
+      description:"CAT6 patch panel for clean and organized network cabling."
+    },
+    "network-ubiquiti-unifi-access-point": {
+      id:"network-ubiquiti-unifi-access-point",
+      category:"Ubiquiti",
+      name:"Ubiquiti UniFi Access Point",
+      priceNew:14000,
+      image:"images/ub.png",
+      description:"UniFi Access Point for managed Wi‑Fi coverage."
+    },
+
+    // Automatic Gates
+    "gates-sliding-gate-motor-heavy-duty": {
+      id:"gates-sliding-gate-motor-heavy-duty",
+      category:"Automatic Gates",
+      name:"Heavy Duty Sliding Gate Motor",
+      priceNew:35000,
+      image:"images/heavy.png",
+      description:"Heavy duty sliding gate motor designed for smooth and reliable gate operation."
+    },
+    "gates-swing-gate-motor-pair": {
+      id:"gates-swing-gate-motor-pair",
+      category:"Automatic Gates",
+      name:"Automatic Swing Gate Motor (Pair)",
+      priceNew:28000,
+      image:"images/pair.png",
+      description:"Swing gate motor pair for controlled and secure access."
+    },
+
+    // Electric Fence
+    "fence-10j-electric-fence-energizer": {
+      id:"fence-10j-electric-fence-energizer",
+      category:"Electric Fence",
+      name:"10J Electric Fence Energizer",
+      priceNew:22000,
+      image:"images/fence.png",
+      description:"Electric fence energizer for perimeter security."
+    },
+
+    // Time & Attendance
+    "time-attendance-zkteco-k40": {
+      id:"time-attendance-zkteco-k40",
+      category:"Time & Attendance",
+      name:"ZKTeco K40 Biometric Time Terminal",
+      priceNew:9500,
+      image:"images/zkt.png",
+      description:"Biometric time terminal for attendance tracking and access control."
+    },
+
+    // Telephony
+    "telephony-yeastar-s20-pbx": {
+      id:"telephony-yeastar-s20-pbx",
+      category:"Telephony",
+      name:"Yeastar S20 VoIP PBX System",
+      priceNew:35000,
+      image:"images/voip.png",
+      description:"Yeastar S20 VoIP PBX for business phone systems and call management."
+    },
+
+    // Computing
+    "computing-logitech-k380-keyboard": {
+      id:"computing-logitech-k380-keyboard",
+      category:"Keyboards",
+      name:"Logitech K380 Bluetooth Keyboard",
+      priceNew:4500,
+      image:"images/keyboard.png",
+      description:"Compact Bluetooth keyboard for comfortable typing across devices."
+    },
+    "computing-logitech-m280-mouse": {
+      id:"computing-logitech-m280-mouse",
+      category:"Mice",
+      name:"Logitech M280 Wireless Mouse",
+      priceNew:2200,
+      image:"images/log.png",
+      description:"Reliable wireless mouse for smooth everyday use."
+    },
+    "computing-logitech-c920-webcam": {
+      id:"computing-logitech-c920-webcam",
+      category:"Computing",
+      name:"Logitech C920 HD Pro Webcam",
+      priceNew:12000,
+      image:"images/cam.png",
+      description:"HD webcam for video calls, meetings and streaming."
+    },
+
+    // Laptops & Monitors
+    "laptops-lenovo-t460s": {
+      id:"laptops-lenovo-t460s",
+      category:"Laptops",
+      name:"Lenovo t460s - Inquire for Pricing",
+      priceNew:null,
+      image:"images/460s.png",
+      description:"Business laptop for reliable performance—contact us for pricing and availability."
+    },
+    "monitors-hd-projector": {
+      id:"monitors-hd-projector",
+      category:"Projectors",
+      name:"HD Projector - Inquire for Pricing",
+      priceNew:null,
+      image:"images/proj.png",
+      description:"HD projector for presentations and home viewing—contact us for available models and pricing."
+    },
+
+    // Phones, Storage, Accessories
+    "smartphones-latest-smartphones": {
+      id:"smartphones-latest-smartphones",
+      category:"Smartphones",
+      name:"Latest Smartphones - Inquire for Pricing",
+      priceNew:null,
+      image:"images/phone.png",
+      description:"We can source latest smartphones—contact us for current prices and models."
+    },
+    "hard-disks-toshiba-s300-6tb": {
+      id:"hard-disks-toshiba-s300-6tb",
+      category:"Hard Disks",
+      name:"Toshiba S300 6TB Surveillance HDD",
+      priceNew:26000,
+      image:"images/6tb.png",
+      description:"Surveillance-grade HDD designed for continuous CCTV recording."
+    },
+    "hard-disks-toshiba-s300-4tb": {
+      id:"hard-disks-toshiba-s300-4tb",
+      category:"Hard Disks",
+      name:"Toshiba S300 4TB Surveillance HDD",
+      priceNew:13000,
+      image:"images/4tb.png",
+      description:"Surveillance HDD for stable, long-duration CCTV storage."
+    },
+    "smartwatches-latest-smartwatches": {
+      id:"smartwatches-latest-smartwatches",
+      category:"Smartwatches",
+      name:"Latest Smartwatches - Inquire",
+      priceNew:null,
+      image:"images/watch.png",
+      description:"Latest smartwatch options available—contact us for current prices."
+    },
+    "servers-enterprise-servers": {
+      id:"servers-enterprise-servers",
+      category:"Servers",
+      name:"Enterprise Servers - Inquire",
+      priceNew:null,
+      image:"images/server.png",
+      description:"Enterprise-grade servers available on request—contact us for options and pricing."
+    },
+    "streetlights-solar-led-streetlights": {
+      id:"streetlights-solar-led-streetlights",
+      category:"Streetlights",
+      name:"Solar LED Streetlights - Inquire",
+      priceNew:null,
+      image:"images/lights.png",
+      description:"Solar streetlights for efficient outdoor lighting—contact for pricing and system sizing."
+    },
+    "video-door-hikvision-video-door-phone": {
+      id:"video-door-hikvision-video-door-phone",
+      category:"Video Door Systems",
+      name:"Hikvision Video Door Phone",
+      priceNew:12000,
+      image:"images/door phone.png",
+      description:"Video door system with improved visitor communication and safer entry."
+    },
+    "printers-all-in-one-printers": {
+      id:"printers-all-in-one-printers",
+      category:"Printers",
+      name:"All-in-One Printers - Inquire",
+      priceNew:null,
+      image:"images/print.png",
+      description:"All-in-one printers available—contact for models and current pricing."
+    },
+    "tablets-latest-tablets": {
+      id:"tablets-latest-tablets",
+      category:"Tablets",
+      name:"Latest Tablets - Inquire",
+      priceNew:null,
+      image:"images/tab.png",
+      description:"Latest tablets available on request—contact for pricing and availability."
+    },
+    "gaming-gaming-accessories": {
+      id:"gaming-gaming-accessories",
+      category:"Gaming",
+      name:"Gaming Accessories - Inquire",
+      priceNew:null,
+      image:"images/game.png",
+      description:"Gaming accessories available—contact us for current inventory and pricing."
+    },
+    "audio-pa-speakers": {
+      id:"audio-pa-speakers",
+      category:"Audio Speakers",
+      name:"PA Systems & Speakers - Inquire",
+      priceNew:null,
+      image:"images/speaker.png",
+      description:"PA systems and speakers available—contact for pricing based on requirements."
+    },
+    "accessories-wireless-headphones": {
+      id:"accessories-wireless-headphones",
+      category:"Accessories",
+      name:"Wireless Headphones",
+      priceNew:3500,
+      image:"images/bluetooth.png",
+      description:"Wireless headphones for everyday listening—easy pairing and clear sound."
+    },
+    "accessories-usb-flash-drive": {
+      id:"accessories-usb-flash-drive",
+      category:"Accessories",
+      name:"USB Flash Drive - Inquire",
+      priceNew:null,
+      image:"images/flash.png",
+      description:"USB flash drives available—contact us for sizes and current pricing."
+    },
+    "accessories-external-hard-drive": {
+      id:"accessories-external-hard-drive",
+      category:"Accessories",
+      name:"External Hard Drive - Inquire",
+      priceNew:null,
+      image:"images/harddrive.png",
+      description:"External HDD solutions available—contact us for capacity and pricing."
+    }
+  };
+
+  function formatKSh(value){
+    if (value === null || value === undefined) return 'Contact for Price';
+    return 'KSh ' + Number(value).toLocaleString();
+  }
+
+  // Filter support for category-only navigation from shop.html
+  function getHashCategory(){
+    var h = (window.location.hash || '').replace(/^#/, '').trim();
+    return h;
+  }
+
+  // Normalize a shop category slug/id to match product sections
+  var CATEGORY_SLUG_TO_LABEL = {
+    "cctv": "CCTV Cameras",
+    "access": "Access Control",
+    "solar": "Solar",
+    "power": "Power Backup",
+    "alarms": "Alarm Systems",
+    "network": "Network Equipment",
+    "gates": "Automatic Gates",
+    "fence": "Electric Fence",
+    "time": "Time & Attendance",
+    "telephony": "Telephony",
+    "computing": "Computing",
+    "laptops": "Laptops",
+    "monitors": "Monitors & Projectors",
+    "smartphones": "Smartphones",
+    "accessories": "Accessories",
+    "hard-disks": "Hard Disks",
+    "smartwatches": "Smartwatches",
+    "servers": "Servers",
+    "streetlights": "Streetlights",
+    "video-door": "Video Door Systems",
+    "printers": "Printers",
+    "tablets": "Tablets",
+    "gaming": "Gaming",
+    "audio": "Audio Speakers",
+    "power-backup": "Battery and Back-up"
+  };
+
+  function getCategoryLabelFromHash(){
+    var slug = getHashCategory();
+    if (!slug) return null;
+    if (slug in CATEGORY_SLUG_TO_LABEL) return CATEGORY_SLUG_TO_LABEL[slug];
+    return null;
+  }
+
+  // Category-only navigation: products.html#cctv etc.
+  // We'll render a category grid by re-using the catalog data.
+  // If ?product=... is present, we keep the existing single-product details view.
+
+  var params = new URLSearchParams(window.location.search);
+  var productId = params.get('product');
+
+  var productDetails = document.getElementById('productDetails');
+  var productNotFound = document.getElementById('productNotFound');
+  var productImg = document.getElementById('productImg');
+  var productCat = document.getElementById('productCat');
+  var productName = document.getElementById('productName');
+  var productPriceNew = document.getElementById('productPriceNew');
+  var productPriceOld = document.getElementById('productPriceOld');
+  var productDesc = document.getElementById('productDesc');
+  var breadcrumbProduct = document.getElementById('breadcrumbProduct');
+
+  var addBtn = document.getElementById('addToCartBtn');
+
+  // CART
+  var CART_KEY = 'gemani_cart_v1';
+
+  function loadCart(){
+    try {
+      var raw = localStorage.getItem(CART_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveCart(items){
+    localStorage.setItem(CART_KEY, JSON.stringify(items));
+  }
+
+  function cartCount(){
+    var items = loadCart();
+    return items.reduce(function(sum,it){ return sum + (it.qty||1); }, 0);
+  }
+
+  function renderCart(){
+    var itemsEl = document.getElementById('cartItems');
+    var emptyEl = document.getElementById('cartEmpty');
+    var totalEl = document.getElementById('cartTotal');
+    var countEl = document.getElementById('cartCount');
+
+    var items = loadCart();
+    countEl.textContent = String(cartCount());
+
+    if (items.length === 0){
+      emptyEl.style.display = 'block';
+      itemsEl.innerHTML = '';
+      totalEl.textContent = formatKSh(0);
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+
+    var total = 0;
+    var html = '';
+
+    items.forEach(function(it){
+      var p = PRODUCTS[it.productId];
+      var name = (p && p.name) ? p.name : it.productId;
+      var img = (p && p.image) ? p.image : '';
+      var price = (p && typeof p.priceNew === 'number') ? p.priceNew : 0;
+      total += price * (it.qty || 1);
+
+      html += '<div style="display:flex; gap:12px; padding:12px 0; border-bottom:1px solid #f5f5f5; align-items:center;">'
+        + (img ? '<img src="' + img + '" alt="" style="width:54px;height:54px;object-fit:contain;border:1px solid #eeeeee;border-radius:6px; background:#fff;" />' : '')
+        + '<div style="flex:1;">'
+        + '<div style="font-weight:800;color:#222;font-size:0.9rem; line-height:1.3;">' + escapeHtml(name) + '</div>'
+        + '<div style="font-size:0.82rem;color:#888; margin-top:4px;">Qty: <strong style="color:#333;">' + (it.qty||1) + '</strong></div>'
+        + '</div>'
+        + '<div style="text-align:right;">'
+        + '<div style="font-weight:900;color:#dd3333;">' + formatKSh(price * (it.qty||1)) + '</div>'
+        + '<button class="btn btn--outline-red" style="padding:7px 10px; font-size:0.78rem; margin-top:6px;" data-cart-remove="' + it.productId + '">Remove</button>'
+        + '</div>'
+        + '</div>';
+    });
+
+    itemsEl.innerHTML = html;
+    totalEl.textContent = formatKSh(total);
+
+    itemsEl.querySelectorAll('[data-cart-remove]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var pid = btn.getAttribute('data-cart-remove');
+        var items2 = loadCart().filter(function(it){ return it.productId !== pid; });
+        saveCart(items2);
+        renderCart();
+      });
+    });
+  }
+
+  function escapeHtml(str){
+    return String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'<')
+      .replace(/>/g,'>')
+      .replace(/"/g,'"')
+      .replace(/'/g,'&#039;');
+  }
+
+  function addToCart(product){
+    if (!product || !product.id) return;
+
+    var items = loadCart();
+    var found = items.find(function(it){ return it.productId === product.id; });
+    if (found) found.qty = (found.qty || 1) + 1;
+    else items.push({ productId: product.id, qty: 1 });
+
+    saveCart(items);
+    renderCart();
+  }
+
+  // Populate product page OR category list page
+  var selectedCategoryLabel = getCategoryLabelFromHash();
+
+  function showSelectedCategoryProducts(){
+    // Hide single product panel/cart breadcrumb
+    productDetails.style.display = 'none';
+    productNotFound.style.display = 'none';
+
+    // If no category hash, show helpful message
+    if (!selectedCategoryLabel){
+      productNotFound.style.display = 'block';
+      addBtn.disabled = true;
+      breadcrumbProduct.textContent = 'Products';
+      // Simple fallback: reuse selected product block message
+      productNotFound.querySelector('p').innerHTML = 'Select a category from <a href="shop.html">Shop</a>.';
+      return;
+    }
+
+    // Build category-scoped product list
+    var listWrap = document.createElement('div');
+    listWrap.style.marginTop = '6px';
+    listWrap.innerHTML = '<h2 class="section-heading" style="margin:0 0 12px 0;"><span style="color:#dd3333;">' + escapeHtml(selectedCategoryLabel) + '</span> Products</h2>' +
+      '<div style="display:grid; grid-template-columns: 1fr; gap:12px;">' +
+      PRODUCT_LIST_BY_CATEGORY(selectedCategoryLabel) +
+      '</div>';
+
+    // Replace the currently hidden productDetails inner content by injecting into productDetails
+    productDetails.style.display = 'block';
+    productDetails.innerHTML = '';
+    productDetails.appendChild(listWrap);
+  }
+
+  function PRODUCT_LIST_BY_CATEGORY(label){
+    var products = Object.keys(PRODUCTS).map(function(k){ return PRODUCTS[k]; })
+      .filter(function(p){ return p.category === label; });
+
+    if (products.length === 0){
+      return '<div style="font-size:0.92rem;color:#555;">No products found for this category.</div>';
+    }
+
+    return products.map(function(p){
+      var priceText = (typeof p.priceNew === 'number') ? formatKSh(p.priceNew) : 'Contact for Price';
+      return ''+
+        '<div style="border:1px solid #eeeeee;border-radius:6px;overflow:hidden;display:flex;gap:14px;align-items:flex-start;padding:12px;">' +
+          '<div style="flex:0 0 110px;border:1px solid #eeeeee;border-radius:6px;overflow:hidden;background:#fff;">' +
+            (p.image ? '<img src="'+p.image+'" alt="" style="width:100%;height:90px;object-fit:contain;display:block;" onerror="this.style.display=\'none\'" />' : '') +
+          '</div>' +
+          '<div style="flex:1;">' +
+            '<div style="font-weight:900;color:#dd3333;font-size:0.78rem;letter-spacing:0.4px;text-transform:uppercase;">' + escapeHtml(p.category) + '</div>' +
+            '<div style="font-weight:800;color:#222;margin-top:4px;line-height:1.3;">' + escapeHtml(p.name) + '</div>' +
+            '<div style="margin-top:8px;font-weight:900;color:#dd3333;">' + escapeHtml(priceText) + '</div>' +
+            '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">' +
+              '<a href="products.html?product='+encodeURIComponent(p.id)+'" class="btn btn--white" style="border:2px solid #ffffff; padding:9px 18px;">View Details</a>' +
+              '<button class="btn btn--red" data-add-product="'+escapeHtml(p.id)+'" style="border:2px solid #dd3333; padding:9px 18px;">➕ Add to Cart</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  if (selectedCategoryLabel && !productId){
+    // Category navigation request
+    showSelectedCategoryProducts();
+    // Ensure cart still works
+    renderCart();
+    return;
+  }
+
+  // Single product details mode
+  var product = productId ? PRODUCTS[productId] : null;
+  if (!product){
+    productDetails.style.display = 'none';
+    productNotFound.style.display = 'block';
+    addBtn.disabled = true;
+  } else {
+    productDetails.style.display = 'block';
+    productNotFound.style.display = 'none';
+
+    breadcrumbProduct.textContent = product.name;
+
+    productImg.src = product.image;
+    productImg.style.display = 'block';
+
+    productCat.textContent = product.category || '';
+    productName.textContent = product.name;
+
+    productPriceNew.textContent = formatKSh(product.priceNew);
+
+    if (typeof product.priceOld === 'number'){
+      productPriceOld.style.display = 'inline';
+      productPriceOld.textContent = formatKSh(product.priceOld);
+    } else {
+      productPriceOld.style.display = 'none';
+    }
+
+    productDesc.textContent = product.description || '';
+
+    addBtn.disabled = false;
+    addBtn.addEventListener('click', function(){
+      addToCart(product);
+    });
+  }
+
+  // Initial cart render
+  renderCart();
+
+  document.getElementById('clearCartBtn').addEventListener('click', function(){
+    localStorage.removeItem(CART_KEY);
+    renderCart();
+  });
+
+  document.getElementById('checkoutBtn').addEventListener('click', function(){
+    var items = loadCart();
+    if (items.length === 0){
+      alert('Your cart is empty.');
+      return;
+    }
+
+    var lines = ['Hello Gemani Supplies!\n\nCart Summary:'];
+    var total = 0;
+
+    items.forEach(function(it){
+      var p = PRODUCTS[it.productId];
+      var name = p ? p.name : it.productId;
+      var price = (p && typeof p.priceNew === 'number') ? p.priceNew : 0;
+      var line = '- ' + name + ' (Qty: ' + (it.qty||1) + ')' + (price ? (' — ' + formatKSh(price * (it.qty||1))) : '');
+      lines.push(line);
+      total += price * (it.qty||1);
+    });
+
+    lines.push('\nTotal (where available): ' + formatKSh(total));
+    lines.push('\nKindly share availability and payment options.');
+
+    var text = lines.join('\n');
+    var waUrl = 'https://wa.me/254721620637?text=' + encodeURIComponent(text);
+    window.open(waUrl, '_blank');
+  });
+})();
+</script>
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
+
