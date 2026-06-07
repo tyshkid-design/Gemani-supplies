@@ -15,36 +15,8 @@
     }, { passive: true });
   }
 
-  /* ── MOBILE NAV ──────────────────────────────────── */
-  var hamburger = document.querySelector('.hamburger');
-  var mainNav   = document.querySelector('.main-nav');
-  var navOverlay = null;
 
-  function openNav() {
-    mainNav.classList.add('is-open');
-    hamburger.classList.add('is-open');
-    navOverlay = document.createElement('div');
-    navOverlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:599;';
-    document.body.appendChild(navOverlay);
-    document.body.style.overflow = 'hidden';
-    navOverlay.addEventListener('click', closeNav);
-  }
-  function closeNav() {
-    mainNav.classList.remove('is-open');
-    hamburger.classList.remove('is-open');
-    if (navOverlay && navOverlay.parentNode) navOverlay.parentNode.removeChild(navOverlay);
-    navOverlay = null;
-    document.body.style.overflow = '';
-  }
 
-  if (hamburger && mainNav) {
-    hamburger.addEventListener('click', function () {
-      mainNav.classList.contains('is-open') ? closeNav() : openNav();
-    });
-    mainNav.querySelectorAll('.main-nav__link').forEach(function (link) {
-      link.addEventListener('click', closeNav);
-    });
-  }
 
   /* ── HERO SLIDER ─────────────────────────────────── */
   var slides   = document.querySelectorAll('.hero-slider__slide');
@@ -188,10 +160,8 @@
     shopInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') runSearch(); });
   }
 
-  /* ── ACTIVE NAV LINK ──────────────────────────────── */
-  var page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.main-nav__link').forEach(function (a) {
-    if ((a.getAttribute('href') || '').split('#')[0] === page) a.classList.add('is-active');
+    if ((a.getAttribute('href') || '').split('#')[0] === (window.location.pathname.split('/').pop() || 'index.html')) a.classList.add('is-active');
   });
 
   /* ── SMOOTH ANCHOR SCROLL ─────────────────────────── */
@@ -205,4 +175,44 @@
     });
   });
 
+  // Note: hamburger/mobile-nav logic intentionally removed in this project.
+  /* ── MOBILE NAV ──────────────────────────────────── */
+  // Hamburger/mobile navigation
+  var hamburger = document.getElementById('hamburger');
+  var mainNav = document.getElementById('mainNav');
+
+  function toggleNav(open) {
+    if (!mainNav) return;
+    var isOpen = typeof open === 'boolean' ? open : !mainNav.classList.contains('is-open');
+    if (isOpen) mainNav.classList.add('is-open');
+    else mainNav.classList.remove('is-open');
+    if (hamburger) hamburger.classList.toggle('is-open', !!isOpen);
+  }
+
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function () {
+      toggleNav();
+    });
+
+    // Close when clicking any nav link
+    mainNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        toggleNav(false);
+      });
+    });
+
+    // Close on escape and when resizing to desktop
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') toggleNav(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) toggleNav(false);
+    }, { passive: true });
+
+    // If page loads with a hash, keep nav closed
+    toggleNav(false);
+  }
 })();
+
+

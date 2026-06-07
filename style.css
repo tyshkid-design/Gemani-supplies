@@ -433,7 +433,7 @@ input, select, textarea { font-family: inherit; }
 .prod-card__body { padding: 14px; }
 .prod-card__cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #dd3333; display: block; margin-bottom: 5px; }
 .prod-card__name { font-size: 0.88rem; font-weight: 600; color: #222222; line-height: 1.4; margin-bottom: 10px; }
-.prod-card__price { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.prod-card__price { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
 .prod-card__price-new { font-size: 1rem; font-weight: 700; color: #dd3333; }
 .prod-card__price-old { font-size: 0.82rem; color: #aaaaaa; text-decoration: line-through; }
 .prod-card__btn {
